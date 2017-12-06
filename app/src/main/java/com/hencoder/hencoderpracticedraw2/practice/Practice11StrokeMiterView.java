@@ -37,17 +37,20 @@ public class Practice11StrokeMiterView extends View {
         super.onDraw(canvas);
 
         canvas.save();
-
+//        miter limit 的默认值是 4，对应的是一个大约 29° 的锐角：
         canvas.translate(100, 100);
         // MITER 值：1
+        paint.setStrokeMiter(1);
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
         // MITER 值：2
+        paint.setStrokeMiter(2);
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
         // MITER 值：5
+        paint.setStrokeMiter(5);
         canvas.drawPath(path, paint);
 
         canvas.restore();
